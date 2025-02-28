@@ -1,17 +1,20 @@
 @font-face {
-    font-family: Rubik;
-    src: url('/assets/images/fonts/Rubik.ttf');
+    font-family: Rubik, sans-serif;
+    src:url('/cartao/assets/fonts/Rubik.ttf')
 }
 
 body {
-    font-family: 'Rubik', sans-serif;
-    background-color: #ddd;
+    font-family: Rubik;
+    background-color: #ffffff;
     text-align: center;
 }
 
+.card p {
+    text-align: justify;
+}
 
 .card {
-    background: #444;
+    background: #424242;
     padding: 15px;
     border-radius: 8px;
     width: 250px;
