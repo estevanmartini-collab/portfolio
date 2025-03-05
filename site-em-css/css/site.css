@@ -5,12 +5,14 @@
 
 body {
     font-family: Rubik;
-    
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza o conteúdo */
 }
 
 h1 {
-font-family: Bebas Neue, sans-serif;
-text-transform: uppercase;
+    font-family: Bebas Neue, sans-serif;
+    text-transform: uppercase;
 }
 
 .navbar {
@@ -30,6 +32,9 @@ text-transform: uppercase;
     text-align: center;
     padding: 100px 20px 50px;
     background-color: #89c8e0;
+    display: flex;
+    justify-content: center; /* Centraliza a logo */
+    align-items: center;
 }
 
 .estilo img {
@@ -42,6 +47,9 @@ text-transform: uppercase;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sobre h2 {
@@ -50,6 +58,7 @@ text-transform: uppercase;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
+    width: 100%;
 }
 
 .servicos {
@@ -57,7 +66,9 @@ text-transform: uppercase;
     margin: 20px;
     background-color: #f7e6c7;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .servicos h2 {
@@ -66,11 +77,15 @@ text-transform: uppercase;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
+    width: 100%;
 }
 
 .servicos ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .servicos li {
@@ -78,6 +93,7 @@ text-transform: uppercase;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .horarios {
@@ -86,6 +102,9 @@ text-transform: uppercase;
     background-color: #d9f0e6;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .horarios h2 {
@@ -94,6 +113,8 @@ text-transform: uppercase;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
+    box-shadow: 0 0 10px #000000;
+    width: 100%;
 }
 
 .horarios table {
@@ -114,6 +135,9 @@ text-transform: uppercase;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contato h2 {
@@ -122,6 +146,7 @@ text-transform: uppercase;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
+    width: 100%;
 }
 
 body {
