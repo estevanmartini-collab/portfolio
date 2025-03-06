@@ -1,0 +1,95 @@
+@font-face {
+    font-family: Rubik, sans-serif;
+    src: url('/site-em-css/css/fonts/Rubik.ttf');
+}
+
+body {
+    font-family: Rubik;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas:
+        "header header"
+        "menu content"
+        "footer footer";
+    min-height: 100vh;
+}
+
+.navbar {
+    grid-area: header;
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #222;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu a {
+    color: yellow;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.conteudo {
+    grid-area: content;
+    background-color: #defff1;
+    padding: 40px;
+    color: black;
+}
+
+.estilo,
+.sobre,
+.servicos,
+.horarios,
+.contato {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sobre h2, .servicos h2, .horarios h2, .contato h2 {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.horarios table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.horarios th, .horarios td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #111;
+    color: yellow;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}

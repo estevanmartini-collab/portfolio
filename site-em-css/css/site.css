@@ -6,8 +6,8 @@
 body {
     font-family: Rubik;
     display: flex;
-    flex-direction: column; /* Organiza os elementos em coluna */
-    align-items: center; /* Centraliza o conteúdo */
+    flex-direction: column; 
+    align-items: center;
 }
 
 h1 {
@@ -33,7 +33,7 @@ h1 {
     padding: 100px 20px 50px;
     background-color: #89c8e0;
     display: flex;
-    justify-content: center; /* Centraliza a logo */
+    justify-content: center;
     align-items: center;
 }
 
