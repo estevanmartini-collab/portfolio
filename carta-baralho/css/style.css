@@ -90,7 +90,7 @@ body {
 }
 
 .verso {
-    background-image: url('./carta-baralho/imagem-verso/istockphoto-166089254-612x612.jpg');
+    background-image: url('../carta-baralho/imagem-verso/istockphoto-166089254-612x612.jpg');
     background-size: cover;
     background-position: center;
     transform: rotateY(180deg);
