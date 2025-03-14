@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url('/assets/images/css/thumb-1920-1382906.png');
+    background-image: url('./assets/images/css/thumb-1920-1382906.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
