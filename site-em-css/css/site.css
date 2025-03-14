@@ -1,18 +1,25 @@
 @font-face {
-    font-family: Rubik, sans-serif;
+    font-family: 'Rubik';
     src: url('/site-em-css/css/fonts/Rubik.ttf');
 }
 
 body {
-    font-family: Rubik;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
 }
 
 h1 {
-    font-family: Bebas Neue, sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #89c8e0;
 }
 
 .navbar {
@@ -24,60 +31,68 @@ h1 {
     color: white;
     padding: 15px;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
 }
 
 .estilo {
     text-align: center;
-    padding: 100px 20px 50px;
-    background-color: #89c8e0;
+    padding: 120px 20px 50px;
+    background-color: #1e1e1e;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .estilo img {
-    max-width: 1000px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sobre {
+.estilo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.sobre, .servicos, .horarios, .contato {
     padding: 40px;
     margin: 20px;
-    background-color: #ffffff;
+    background-color: #1e1e1e;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sobre h2 {
+.sobre:hover, .servicos:hover, .horarios:hover, .contato:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.sobre h2, .servicos h2, .horarios h2, .contato h2 {
     background-color: #004c8c;
     color: white;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
-    width: 100%;
+    margin-bottom: 20px;
 }
 
 .servicos {
-    padding: 40px;
-    margin: 20px;
-    background-color: #f7e6c7;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #2a2a2a;
 }
 
 .servicos h2 {
-    background-color: #c3fd93;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    width: 100%;
+    background-color: #89c8e0;
+    color: #121212;
 }
 
 .servicos ul {
@@ -85,36 +100,29 @@ h1 {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .servicos li {
-    background: #fff3d4;
-    margin: 5px 0;
-    padding: 10px;
+    background: #333;
+    padding: 15px;
     border-radius: 5px;
     text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.servicos li:hover {
+    background-color: #89c8e0;
+    color: #121212;
+    transform: translateY(-5px);
 }
 
 .horarios {
-    padding: 40px;
-    margin: 20px;
-    background-color: #d9f0e6;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #2a2a2a;
 }
 
 .horarios h2 {
     background-color: #00723e;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #000000;
-    width: 100%;
 }
 
 .horarios table {
@@ -123,32 +131,55 @@ h1 {
 }
 
 .horarios th, .horarios td {
-    border: 1px solid black;
+    border: 1px solid #444;
     padding: 10px;
     text-align: center;
 }
 
+.horarios th {
+    background-color: #00723e;
+    color: white;
+}
+
 .contato {
-    padding: 40px;
-    margin: 20px;
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #2a2a2a;
 }
 
 .contato h2 {
     background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    width: 100%;
 }
 
-body {
-    height: 220vh;
+.contato p {
+    margin: 10px 0;
+    color: #89c8e0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.estilo, .sobre, .servicos, .horarios, .contato {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .estilo {
+        padding: 100px 20px 30px;
+    }
+
+    .sobre, .servicos, .horarios, .contato {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .servicos li {
+        padding: 10px;
+    }
 }
