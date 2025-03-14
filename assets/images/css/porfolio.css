@@ -4,31 +4,67 @@
 }
 
 body {
+    background-image: url('/assets/images/css/thumb-1920-1382906.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-color: #121212;
     color: #ffffff;
     text-align: center;
     font-family: 'Rubik', sans-serif;
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.7);
+    z-index: -1;
 }
 
 img {
     width: 200px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 img:hover {
     transform: scale(1.1);
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
 }
 
 h1, h2 {
     text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #a8fff8;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
 }
 
 .links {
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .links a {
@@ -37,15 +73,30 @@ h1, h2 {
     color: #ffffff;
     text-decoration: none;
     padding: 10px 20px;
-    margin: 5px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .links a:hover {
     background-color: #a8fff8;
+    color: #121212;
     transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(168, 255, 248, 0.4);
+}
 
-    /* forçando commit */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+img, h1, h2, .links {
+    animation: fadeIn 1s ease-in-out;
 }
