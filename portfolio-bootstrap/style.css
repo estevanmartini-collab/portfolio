@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('../fonts/Rubik.ttf');
+}
+
+body {
+    background-image: url('./photo-1531297484001-80022131f5a1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #121212;
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.7);
+    z-index: -1;
+}
+
+.profile-img {
+    border: 5px solid rgba(168, 255, 248, 0.3);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 30px rgba(168, 255, 248, 0.5);
+}
+
+.text-primary {
+    color: #a8fff8 !important;
+}
+
+.btn-dark {
+    background-color: #222;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline-primary {
+    color: #a8fff8;
+    border-color: #a8fff8;
+}
+
+.btn-outline-primary:hover {
+    background-color: #a8fff8;
+    color: #1b1b1b;
+}
+
+.links .btn {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.links .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(168, 255, 248, 0.4);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-img, .display-4, .lead, .links {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .lead {
+        font-size: 1.25rem;
+    }
+    
+    .links .btn {
+        width: 100%;
+    }
+}
