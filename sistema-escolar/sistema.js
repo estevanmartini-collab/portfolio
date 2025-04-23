@@ -33,8 +33,8 @@ class Professor extends Usuario {
 }
 
 const usuariosCadastrados = [
-  new Aluno('João Silva', 'joao@escola.com', '123456', 'A1'),
-  new Professor('Maria Souza', 'maria@escola.com', '654321', ['Matemática', 'Física'])
+  new Aluno('Estevan Martini', 'estevan@alpar.com', '123456', 'A1'),
+  new Professor('Felipe Lima', 'felipe@alpar.com', '654321', ['Matemática', 'Física'])
 ];
 
 const emailInput = document.getElementById('email');
