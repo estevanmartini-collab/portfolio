@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
+  <style>
+    :root {
+      --cor-primaria: #f30505; 
+      --cor-secundaria: #20c997; 
+    }
+    .hero { 
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                 url('https://wallpapers.com/images/hd/microphone-background-p2r0hzf29fnuwyx9.jpg');
+      background-size: cover;
+      color: white;
+    }
+    .servicos { background-color: #f8f9fa; }
+    .card { transition: transform 0.3s; border: none; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+    .btn-primary { background-color: var(--cor-primaria); border: none; }
+    .btn-primary:hover { background-color: #180202; }
+    footer { background-color: #212529; color: white; }
+  </style>
+</head>
+<body>
+  <!-- seção hero -->
+  <section class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1 class="display-4 fw-bold">Martini Sound!</h1>
+          <p class="lead">Encontre o instrumento perfeito para sua jornada musical!</p>
+          <a href="#servicos" class="btn btn-primary btn-lg">Conheça nossos produtos</a>
+        </div>
+        <div class="col-md-6 text-center">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- seção produtos/instrumentos -->
+  <section id="servicos" class="servicos py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Nossos Instrumentos</h2>
+      <div class="row g-4">
+        <!-- guitarra -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://guitarraagora.com.br/wp-content/uploads/2021/02/tocando-guitarra.jpg" class="card-img-top" alt="Guitarra">
+            <div class="card-body">
+              <h5 class="card-title">Guitarra Elétrica</h5>
+              <p class="card-text">Modelo Stratocaster, perfeita para rock e blues. Incluindo amplificador.</p>
+              <p class="fw-bold text-primary">R$ 1.050,87</p>
+              <a href="https://www.amazon.com.br/Guitarra-Stratocaster-Tagima-TG520-Preta/dp/B09239D63Y/ref=sr_1_1?crid=2RVD93XAQG98B&dib=eyJ2IjoiMSJ9.xdBTcz1g29upztrt5pml_gP-atca8oj_74yWrWPmPYqg3GGljcTAmJdXs2UhdHAYhWPy-xhiTnjk5CQrGgYZB76He2PrVY7OB97Jkb3x5KT__AnpsSjykpgcU8F7XS1PBeoBkLy60F1L-FyVRPdMn8iaK9-HUnqUBgqXnTA86Mck_2w7bL3er0bAY-DBupSlSpS0icWFtaLF-vim0f6DEdyaDMWUNmX9ipi4PrDDumJKpedPD-G2AfMWjBZhQ1xm8ENazENPGVaPN6dh1kUHzM-QWrZEZrrcRc9HpsmvpC4.K6o9_gdHDkT3MNaHre6UJtXBKxwjNvTQPjk8yXiNIyI&dib_tag=se&keywords=guitarra+stratocaster&qid=1744725731&sprefix=guitarra+stra%2Caps%2C204&sr=8-1&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147" class="btn btn-outline-primary" target="_blank">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <!-- violão -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://resenhasonora.com.br/wp-content/uploads/2023/09/melhor-violao-profissional-1.jpg" class="card-img-top" alt="Violão">
+            <div class="card-body">
+              <h5 class="card-title">Violão Acústico</h5>
+              <p class="card-text">Som equilibrado, madeira de lei. Ideal para iniciantes e profissionais.</p>
+              <p class="fw-bold text-primary">R$ 799,00</p>
+              <a href="https://www.amazon.com.br/VIOL%C3%83O-EL%C3%89TRICO-AMETISTA-ACTNAB1954-TONANTE/dp/B09BX2694C/ref=sr_1_3_sspa?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=BJH7C3MUZ9L0&dib=eyJ2IjoiMSJ9.mUIS7BZ4Bf5rZKesecoWE6K-PW2sV51upZyvpzguq9YsTkJv2GpTJrIWunxbM-F58hf5ueWUv936DJ9GJmn-MPjt59u9lgFdJf8rQOlThqNU0dEo1gr9Kxw3fp5fF8_wwgKDyB_1Vz2g5W6Jesjafucmi1xFvOe5-p7t7gVnItvAtHx492GAFMXyXCwD-Aujj8MqLozJoMyv90qL_alNofRhJlCnn3ySH1fAjLgzhEz41xopSuw94o06i0qzCKvJthjz0a5oJXnwsHDbyHvUjAT9ZzHdkGQBmTcBdSBrAdQ.3hD1SI7904Bvp0CnkZqSCSuR2dOzlN90U76lC1kBQ_0&dib_tag=se&keywords=viol%C3%A3o+acustico&qid=1744726208&sprefix=viol%C3%A3o+acusti%2Caps%2C202&sr=8-3-spons&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank" class="btn btn-outline-primary">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <!-- bateria -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1650892243500-9ffaa0744fa5?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top"  alt="Bateria">
+            <div class="card-body">
+              <h5 class="card-title">Bateria Completa</h5>
+              <p class="card-text">Kit profissional 5 peças, baioneta e pratos inclusos.</p>
+              <p class="fw-bold text-primary">R$ 3.100,00</p>
+              <a href="https://www.amazon.com.br/Bateria-Ac%C3%BAstica-Pe%C3%A7as-Profissional-Adultos/dp/B0F3JFF67Y/ref=sr_1_1_sspa?crid=1AXDCAFS4HNZO&dib=eyJ2IjoiMSJ9.d47byH2WPWeLqNsnwT8w45WJ66PO1IPtbPEcbcGwdB7On99_n1xaLHhUd126mQMERuYfYSeWXRw1sYNFpE8qVgUNp9mAVJfpD8luxSfMvFzUgcnpz3EA0lVFz3IG-916FMupce1_fGoX_si77G5AM1cYyG-hl666W9StglFgxgPQt67arhvZi1h9FJ0OrTQh5cfYVHp_A69EaMwF9npN_x8ifkshEB-yj4fwHGA4OkyIYqqNayljxts84dVxN02AfH8kA4aXIlKpTbkJG5gvMnA9fmoBLJAMCdxtpUKCZXE.Ed5oV5vh39KlJ2XupnxIaVAKpZkB-zq87fL2z7U8xCM&dib_tag=se&keywords=bateria+profissional&qid=1744726845&sprefix=bateria+pro%2Caps%2C214&sr=8-1-spons&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank" class="btn btn-outline-primary">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- rodapé -->
+  <footer class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Martini Sound!</h5>
+          <p class="mb-0">A melhor loja de instrumentos do Brasil!</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <p class="mb-0">Acompanhe meu trabalho: <br> <a href="https://www.instagram.com/estevanmtn/" target="_blank" class="text-white">Instagram</a> <br> <a href="https://estevanmartini-collab.github.io/portfolio/" target="_blank" class="text-white">Acesse meu Portfólio</a>  </p>
+        </div>
+      </div>
+    </div>
+  </footer>

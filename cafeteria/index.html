@@ -6,92 +6,77 @@
     <title>Martini Coffee</title>
     <link rel="stylesheet" href="./assets/images/css/cafeteria.css">
 </head>
-    <center>
-        <img src="./assets/images/martini.png" alt="Logo Martini's Coffee">
-        <h1>Bem Vindo ao Coffee Martini!</h1>
+<body>
+    <div class="container">
+        <img src="./assets/images/martini.png" alt="Logo Martini's Coffee" class="logo">
+        <h1>Bem-vindo ao Coffee Martini!</h1>
         <h4>Comece o seu dia animado</h4>
-        
+
         <h2>Cardápio</h2>
-        
-        <h2>Bebidas</h2>
-        <ul align="center">
-            <li>
-                <h4>Expresso</h4>
-                <p>P: R$ 4,90 | M: R$ 7,90 | G: R$ 15,00</p>
-                <p>Ingredientes: Leite, Café, Canela em pó, Açúcar.</p>
-            </li>
-            <li>
-                <h4>Pingado</h4>
-                <p>P: R$ 3,50 | M: R$ 7,90 | G: R$ 10,00</p>
-                <p>Ingredientes: Leite, Café.</p>
-            </li>
-            <li>
-                <h4>Capuccino</h4>
-                <p>P: R$ 12,90 | M: R$ 15,90 | G: R$ 20,00</p>
-                <p>Ingredientes: Leite, Café, Chocolate em pó, Canela em pó.</p>
-            </li>
-            <li>
-                <h4>Mocha</h4>
-                <p>P: R$ 14,90 | M: R$ 17,90 | G: R$ 21,00</p>
-                <p>Ingredientes: Leite, Café, Creme de avelã.</p>
-            </li>
-            <li>
-                <h4>Caramelo</h4>
-                <p>P: R$ 14,90 | M: R$ 17,90 | G: R$ 22,00</p>
-                <p>Ingredientes: Leite, Café, Chocolate em pó, Cobertura de Caramelo.</p>
-            </li>
-            <li>
-                <h4>Americano</h4>
-                <p>P: R$ 6,90 | M: R$ 9,90 | G: R$ 12,00</p>
-                <p>Ingredientes: Café puro colhido no sul da Indonésia.</p>
-            </li>
-        </ul>
 
-        <h2>Salgados (Tamanho único - Enorme)</h2>
-        <ul align="center">
-            <li>
-                <h4>Pão de Queijo</h4>
-                <p>Ingredientes: Polvilho azedo, Leite, Ovos, Sal, Óleo, Queijo parmesão ralado.</p>
-            </li>
-            <li>
-                <h4>Esfiha</h4>
-                <p>Ingredientes: Farinha de trigo, Leite morno, Ovos, Fermento, Sal, Óleo, Patinho moído.</p>
-            </li>
-            <li>
-                <h4>Pão na Chapa</h4>
-                <p>Ingredientes: Pão francês, Manteiga, Frigideira Polishop Sauté Grand Vermelha antiaderente 24cm.</p>
-            </li>
-        </ul>
+        <div class="menu">
+            <h2>Bebidas</h2>
+            <ul>
+                <li>
+                    <h4>Expresso</h4>
+                    <p>P: R$ 4,90 | M: R$ 7,90 | G: R$ 15,00</p>
+                    <span class="ingredientes">Ingredientes: Café puro</span>
+                </li>
+                <li>
+                    <h4>Pingado</h4>
+                    <p>P: R$ 3,50 | M: R$ 7,90 | G: R$ 10,00</p>
+                    <span class="ingredientes">Ingredientes: Leite, Café</span>
+                </li>
+                <li>
+                    <h4>Capuccino</h4>
+                    <p>P: R$ 12,90 | M: R$ 15,90 | G: R$ 20,00</p>
+                    <span class="ingredientes">Ingredientes: Leite, Café, Chocolate em pó, Canela em pó</span>
+                </li>
+                <li>
+                    <h4>Mocha</h4>
+                    <p>P: R$ 14,90 | M: R$ 17,90 | G: R$ 21,00</p>
+                    <span class="ingredientes">Ingredientes: Leite, Café, Creme de avelã</span>
+                </li>
+            </ul>
 
-        <h2>Doces (Tamanho único)</h2>
-        <ul align="center">
-            <li>
-                <h4>Bolo de Chocolate</h4>
-                <p>Ingredientes: Leite, Farinha de trigo, Chocolate em pó, Ovos, Fermento.</p>
-            </li>
-            <li>
-                <h4>Torta de Chocolate</h4>
-                <p>Ingredientes: Leite, Farinha de trigo, Ovos, Leite condensado, Creme de leite, Nutella, Leite em pó.</p>
-            </li>
-            <li>
-                <h4>Brigadeiro Trufado</h4>
-                <p>Ingredientes: Leite condensado, Chocolate em pó, Creme de leite, Leite em pó.</p>
-            </li>
-            <li>
-                <h4>Bolo de Fubá da Vovó</h4>
-                <p>Ingredientes: Leite, Café, Chocolate em pó, Farinha de fubá, Ovos, Óleo, Fermento, Farinha de trigo.</p>
-            </li>
-        </ul>
+            <h2>Salgados</h2>
+            <ul>
+                <li>
+                    <h4>Pão de Queijo</h4>
+                    <span class="ingredientes">Ingredientes: Polvilho azedo, Leite, Ovos, Sal, Óleo, Queijo parmesão</span>
+                </li>
+                <li>
+                    <h4>Esfiha</h4>
+                    <span class="ingredientes">Ingredientes: Farinha de trigo, Leite morno, Ovos, Fermento, Patinho moído</span>
+                </li>
+                <li>
+                    <h4>Pão na Chapa</h4>
+                    <span class="ingredientes">Ingredientes: Pão francês, Manteiga</span>
+                </li>
+            </ul>
+
+            <h2>Doces</h2>
+            <ul>
+                <li>
+                    <h4>Bolo de Chocolate</h4>
+                    <span class="ingredientes">Ingredientes: Leite, Farinha de trigo, Chocolate em pó, Ovos, Fermento</span>
+                </li>
+                <li>
+                    <h4>Torta de Chocolate</h4>
+                    <span class="ingredientes">Ingredientes: Leite, Farinha de trigo, Ovos, Leite condensado, Creme de leite, Nutella, Leite em pó</span>
+                </li>
+                <li>
+                    <h4>Brigadeiro Trufado</h4>
+                    <span class="ingredientes">Ingredientes: Leite condensado, Chocolate em pó, Creme de leite, Leite em pó</span>
+                </li>
+            </ul>
+        </div>
 
         <h2>Horário de Funcionamento</h2>
-        <table border="1" align="center">
+        <table>
             <tr>
                 <th>Horários</th>
-                <th>Segunda</th>
-                <th>Terça</th>
-                <th>Quarta</th>
-                <th>Quinta</th>
-                <th>Sexta</th>
+                <th>Segunda a Sexta</th>
                 <th>Sábado</th>
                 <th>Domingos e Feriados</th>
             </tr>
@@ -99,50 +84,29 @@
                 <td>Manhã</td>
                 <td>08:00 - 12:00</td>
                 <td>08:00 - 12:00</td>
-                <td>08:00 - 12:00</td>
-                <td>08:00 - 12:00</td>
-                <td>08:00 - 12:00</td>
-                <td>08:00 - 12:00</td>
-                <td rowspan="2">Fechado</td>
+                <td>Fechado</td>
             </tr>
             <tr>
                 <td>Tarde</td>
                 <td>14:00 - 18:00</td>
-                <td>14:00 - 18:00</td>
-                <td>14:00 - 18:00</td>
-                <td>14:00 - 18:00</td>
-                <td>14:00 - 18:00</td>
+                <td>Fechado</td>
                 <td>Fechado</td>
             </tr>
         </table>
-    </center>
-    
-    
-        <center>
 
-            <h2>Fale conosco</h2>
+        <h2>Fale Conosco</h2>
+        <form>
             <label>Nome:</label>
-            <input type="text" name="nome" placeholder="Digite seu nome completo" required><br><br>
-            
+            <input type="text" name="nome" placeholder="Digite seu nome completo" required>
+
             <label>E-mail:</label>
-            <input type="email" name="email" placeholder="Digite seu e-mail" required><br><br>
-            
-            <label>Telefone:</label>
-            <input type="tel" name="telefone" placeholder="Digite seu telefone"><br><br>
-            
-            <label>Assunto:</label>
-            <input type="text" name="assunto" placeholder="Digite o assunto"><br><br>
-            
+            <input type="email" name="email" placeholder="Digite seu e-mail" required>
+
             <label>Mensagem:</label>
-            <textarea name="mensagem" placeholder="Escreva sua mensagem" required></textarea><br><br>
-            
-            <input type="submit" value="Enviar">
+            <textarea name="mensagem" placeholder="Escreva sua mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
         </form>
-    </center>
-<h6><i>log: criado um formulário de contato e mudança na estrutura da cafeteria, centralizando tudo. <br>
-    adicionado css para estilizar a página: alterações na fonte.
-</i></h6>
-
+    </div>
 </body>
-</html
-
+</html>
