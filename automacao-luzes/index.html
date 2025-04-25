@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Controle Residencial</title>
+    <script src="./luzes.js"></script>
+    <style>
+        :root {
+            --cor-ativa: #f8d66a;
+            --cor-inativa: #f0f0f0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            max-width: 850px;
+            max-width: 850px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background-color: #fafafa;
+        }
+        
+        .ambiente {
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ambiente h2 {
+            margin-top: 0;
+            color: #3a3a3a;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .status {
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0.8rem 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        .ligada {
+            background-color: #e6f7e8;
+            color: #1a7a1f;
+        }
+        
+        .desligada {
+            background-color: #f5f5f5;
+            color: #5f5f5f;
+        }
+        
+        .controles {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+        
+        .btn {
+            padding: 0.7rem 1.4rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .btn-ligar {
+            background-color: #4a9f48;
+            color: white;
+        }
+        
+        .btn-desligar {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .iluminacao-ativa {
+            box-shadow: inset 0 0 30px rgba(248, 214, 106, 0.4);
+            background-color: #fffdf5;
+        }
+        
+        .notificacao {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            padding: 14px 20px;
+            background: #333;
+            color: white;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: none;
+            animation: fadeIn 0.3s;
+            z-index: 100;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #2c3e50; text-align: center; margin-bottom: 2rem;">Controle Residencial</h1>
+    
+    <div class="ambiente" id="sala-de-estar">
+        <h2>Sala de Estar</h2>
+        <div class="status desligada">⏻ Desligada</div>
+        <div class="controles">
+            <button class="btn btn-ligar" data-ambiente="sala-de-estar" data-acao="ativar">Acender</button>
+            <button class="btn btn-desligar" data-ambiente="sala-de-estar" data-acao="desativar">Apagar</button>
+        </div>
+    </div>
+    
+    <div class="ambiente" id="quarto-principal">
+        <h2>Dormitório</h2>
+        <div class="status desligada">⏻ Desligada</div>
+        <div class="controles">
+            <button class="btn btn-ligar" data-ambiente="quarto-principal" data-acao="ativar">Acender</button>
+            <button class="btn btn-desligar" data-ambiente="quarto-principal" data-acao="desativar">Apagar</button>
+        </div>
+    </div>
+    
+    <div class="ambiente" id="area-gourmet">
+        <h2>Área Gourmet</h2>
+        <div class="status desligada">⏻ Desligada</div>
+        <div class="controles">
+            <button class="btn btn-ligar" data-ambiente="area-gourmet" data-acao="ativar">Acender</button>
+            <button class="btn btn-desligar" data-ambiente="area-gourmet" data-acao="desativar">Apagar</button>
+        </div>
+    </div>
+    
+    <div class="notificacao" id="notificacao"></div>
+</body>
+</html>
