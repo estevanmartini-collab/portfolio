@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="cadastroEscolar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Escolar - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./sistema.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div ng-controller="AppController">
+        <h1 ng-bind="mensagem"></h1>
+        
+        <div class="user-card">
+            <h2>Dados do Usuário:</h2>
+            <div class="user-info">
+
+                <img ng-if="usuario.tipo === 'Estudante'" 
+                     src="https://cdn-icons-png.flaticon.com/512/3413/3413366.png" 
+                     class="user-avatar" 
+                     alt="Aluno">
+                
+                <img ng-if="usuario.tipo === 'Professor'" 
+                     src="https://cdn-icons-png.flaticon.com/512/158/158279.png" 
+                     class="user-avatar" 
+                     alt="Professor">
+                
+                <div>
+                    <p><strong>Nome:</strong> {{usuario.nome}}</p>
+                    <p><strong>Tipo:</strong> {{usuario.tipo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
