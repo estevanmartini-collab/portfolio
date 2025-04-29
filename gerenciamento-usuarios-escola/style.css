@@ -1,28 +1,108 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #0f0f1b; /* Fundo escuro */
+    color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.filtros-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filtro-input, .filtro-select {
+    padding: 10px 15px;
+    border: 2px solid #ff79c6; /* Rosa */
+    background-color: #1a1a2e;
+    color: #f5f5f5;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+    outline: none;
+}
+
+.filtro-input {
+    flex: 2;
+}
+
+.filtro-select {
+    flex: 1;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .user-card {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: #1a1a2e;
+    border: 2px solid #ff79c6;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.user-card:hover {
+    background-color: #2d2d44;
+    transform: translateX(5px);
+    box-shadow: 0 0 10px #ff79c6;
 }
 
 .user-avatar {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 20px;
+    border: 2px solid #ff79c6;
 }
 
 .user-info {
+    flex: 1;
+}
+
+.user-info h3 {
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.user-details {
     display: flex;
+    gap: 15px;
     align-items: center;
+}
+
+.user-type {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid #ff79c6;
+    color: #ff79c6;
+    text-transform: uppercase;
+}
+
+.user-date {
+    color: #a0a0a0;
+    font-size: 0.85em;
+    font-family: monospace;
 }

@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Escolar - AngularJS</title>
+    <title>Gerenciamento Escolar</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./sistema.js"></script>
-    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div ng-controller="AppController">
-        <h1 ng-bind="mensagem"></h1>
+    <div class="container" ng-controller="AppController as appCtrl">
+        <h1>Gerenciamento de Usuários</h1>
         
-        <div class="user-card">
-            <h2>Dados do Usuário:</h2>
-            <div class="user-info">
+        <div class="filtros-container">
+            <input type="text" ng-model="appCtrl.filtroGeral" 
+                   placeholder="Buscar por nome..." class="filtro-input">
+            
+            <select ng-model="appCtrl.filtroTipo" class="filtro-select">
+                <option value="">Todos</option>
+                <option value="Aluno">Alunos</option>
+                <option value="Professor">Professores</option>
+            </select>
+        </div>
 
-                <img ng-if="usuario.tipo === 'Estudante'" 
-                     src="https://cdn-icons-png.flaticon.com/512/3413/3413366.png" 
-                     class="user-avatar" 
-                     alt="Aluno">
+        <div class="user-list" ng-controller="ListaUsuariosController as listaCtrl">
+            <div class="user-card" 
+                 ng-repeat="usuario in listaCtrl.usuarios | filter:appCtrl.filtroGeral | filter:{tipo: appCtrl.filtroTipo}">
                 
-                <img ng-if="usuario.tipo === 'Professor'" 
-                     src="https://cdn-icons-png.flaticon.com/512/158/158279.png" 
-                     class="user-avatar" 
-                     alt="Professor">
+                <img ng-src="{{usuario.tipo === 'Aluno' ? 
+                    'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' : 
+                    'https://cdn-icons-png.flaticon.com/512/3135/3135768.png'}}" 
+                    alt="{{usuario.tipo}}" class="user-avatar">
                 
-                <div>
-                    <p><strong>Nome:</strong> {{usuario.nome}}</p>
-                    <p><strong>Tipo:</strong> {{usuario.tipo}}</p>
+                <div class="user-info">
+                    <h3>{{usuario.nome | uppercase}}</h3>
+                    <div class="user-details">
+                        <span class="user-type {{usuario.tipo.toLowerCase()}}">
+                            {{usuario.tipo}}
+                        </span>
+                        <span class="user-date">
+                            {{usuario.dataCadastro | date:'dd/MM/yyyy'}}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
