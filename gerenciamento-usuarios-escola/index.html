@@ -11,9 +11,9 @@
 <body>
     <div class="container" ng-controller="AppController as appCtrl">
         <h1>Gerenciamento de Usuários</h1>
-        
+
         <div class="filtros-container">
-            <input type="text" ng-model="appCtrl.filtroGeral" 
+            <input type="text" ng-model="appCtrl.filtroGeral"
                    placeholder="Buscar por nome..." class="filtro-input">
             
             <select ng-model="appCtrl.filtroTipo" class="filtro-select">
@@ -23,15 +23,28 @@
             </select>
         </div>
 
-        <div class="user-list" ng-controller="ListaUsuariosController as listaCtrl">
-            <div class="user-card" 
-                 ng-repeat="usuario in listaCtrl.usuarios | filter:appCtrl.filtroGeral | filter:{tipo: appCtrl.filtroTipo}">
-                
+        <!-- formulario para adicionar usuario -->
+         
+        <form class="filtros-container" ng-submit="appCtrl.adicionarUsuario()">
+            <input type="text" ng-model="appCtrl.novoUsuario.nome" placeholder="Nome" class="filtro-input" required>
+            <select ng-model="appCtrl.novoUsuario.tipo" class="filtro-select" required>
+                <option value="">Tipo</option>
+                <option value="Aluno">Aluno</option>
+                <option value="Professor">Professor</option>
+            </select>
+            <button type="submit" class="filtro-select" style="background-color:#ff79c6; color:#fff; border:none;">Adicionar</button>
+        </form>
+
+
+        <div class="user-list">
+            <div class="user-card"
+                 ng-repeat="usuario in appCtrl.usuarios | filter:appCtrl.filtroGeral | filter:{tipo: appCtrl.filtroTipo}">
+
                 <img ng-src="{{usuario.tipo === 'Aluno' ? 
                     'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' : 
-                    'https://cdn-icons-png.flaticon.com/512/3135/3135768.png'}}" 
+                    'https://cdn-icons-png.flaticon.com/512/3135/3135768.png'}}"
                     alt="{{usuario.tipo}}" class="user-avatar">
-                
+
                 <div class="user-info">
                     <h3>{{usuario.nome | uppercase}}</h3>
                     <div class="user-details">
@@ -43,6 +56,8 @@
                         </span>
                     </div>
                 </div>
+
+                <button class="remover-btn" ng-click="appCtrl.removerUsuario($index)">Remover</button>
             </div>
         </div>
     </div>

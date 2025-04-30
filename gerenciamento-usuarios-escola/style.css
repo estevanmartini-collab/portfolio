@@ -105,4 +105,29 @@ h1 {
     color: #a0a0a0;
     font-size: 0.85em;
     font-family: monospace;
+
+    
+    .remover-btn {
+        background-color: #ff5555;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    
+    .remover-btn:hover {
+        background-color: #ff7777;
+    }
+    .remover-btn:active {
+        background-color: #ff9999;
+    }
+    .remover-btn:focus {
+        outline: none;
+        box-shadow: 0 0 5px #ff79c6;
+    }    
+
+    
 }
