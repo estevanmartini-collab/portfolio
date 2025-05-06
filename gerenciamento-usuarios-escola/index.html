@@ -1,65 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-BR" ng-app="cadastroEscolar">
+<html lang="pt-br" ng-app="userApp" ng-controller="userController">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento Escolar</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="./sistema.js"></script>
+  <meta charset="UTF-8" />
+  <title>Gerenciamento de Usuários</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./sistema.js"></script>
 </head>
-<body>
-    <div class="container" ng-controller="AppController as appCtrl">
-        <h1>Gerenciamento de Usuários</h1>
+<body ng-init="init()">
 
-        <div class="filtros-container">
-            <input type="text" ng-model="appCtrl.filtroGeral"
-                   placeholder="Buscar por nome..." class="filtro-input">
-            
-            <select ng-model="appCtrl.filtroTipo" class="filtro-select">
-                <option value="">Todos</option>
-                <option value="Aluno">Alunos</option>
-                <option value="Professor">Professores</option>
-            </select>
-        </div>
+  <h1>Gerenciamento de Usuários</h1>
 
-        <!-- formulario para adicionar usuario -->
-         
-        <form class="filtros-container" ng-submit="appCtrl.adicionarUsuario()">
-            <input type="text" ng-model="appCtrl.novoUsuario.nome" placeholder="Nome" class="filtro-input" required>
-            <select ng-model="appCtrl.novoUsuario.tipo" class="filtro-select" required>
-                <option value="">Tipo</option>
-                <option value="Aluno">Aluno</option>
-                <option value="Professor">Professor</option>
-            </select>
-            <button type="submit" class="filtro-select" style="background-color:#ff79c6; color:#fff; border:none;">Adicionar</button>
-        </form>
+  <div class="filter-group">
+    <input type="text" ng-model="searchName" placeholder="Buscar por nome...">
+    <select ng-model="filterType">
+      <option value="">Todos</option>
+      <option value="Aluno">Aluno</option>
+      <option value="Professor">Professor</option>
+      <option value="Professora">Professora</option>
+    </select>
+  </div>
 
+  <div class="form-group">
+    <input type="text" ng-model="newUser.name" placeholder="Nome">
+    <select ng-model="newUser.type">
+      <option value="">Tipo</option>
+      <option value="Aluno">Aluno</option>
+      <option value="Professor">Professor</option>
+      <option value="Professora">Professora</option>
+    </select>
+    <button ng-click="addUser()">Adicionar</button>
+  </div>
 
-        <div class="user-list">
-            <div class="user-card"
-                 ng-repeat="usuario in appCtrl.usuarios | filter:appCtrl.filtroGeral | filter:{tipo: appCtrl.filtroTipo}">
-
-                <img ng-src="{{usuario.tipo === 'Aluno' ? 
-                    'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' : 
-                    'https://cdn-icons-png.flaticon.com/512/3135/3135768.png'}}"
-                    alt="{{usuario.tipo}}" class="user-avatar">
-
-                <div class="user-info">
-                    <h3>{{usuario.nome | uppercase}}</h3>
-                    <div class="user-details">
-                        <span class="user-type {{usuario.tipo.toLowerCase()}}">
-                            {{usuario.tipo}}
-                        </span>
-                        <span class="user-date">
-                            {{usuario.dataCadastro | date:'dd/MM/yyyy'}}
-                        </span>
-                    </div>
-                </div>
-
-                <button class="remover-btn" ng-click="appCtrl.removerUsuario($index)">Remover</button>
-            </div>
-        </div>
+  <div class="user-card" ng-repeat="user in users | filter:searchName | filter:{type: filterType}">
+    <div class="user-info">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar">
+      <div class="user-details">
+        <span class="user-name">{{ user.name.toUpperCase() }}</span>
+        <span class="user-type">{{ user.type.toUpperCase() }}</span>
+        <span class="user-date">{{ user.date }}</span>
+      </div>
     </div>
+    <button class="remove-btn" ng-click="removeUser($index)">Remover</button>
+  </div>
+
+  <script>
+    angular.module('userApp', [])
+      .controller('userController', function($scope) {
+        $scope.users = [
+          { name: 'Estevan Martini', type: 'Aluno', date: '13/03/2025' },
+          { name: 'Felipe Lima', type: 'Professor', date: '13/03/2025' },
+          { name: 'Matheus Leal', type: 'Aluno', date: '18/03/2025' },
+          { name: 'Cintia Oliveira', type: 'Professora', date: '05/01/2025' },
+          { name: 'Enzo Pelizaro', type: 'Aluno', date: '28/05/2025' }
+        ];
+
+        $scope.newUser = {};
+
+        $scope.addUser = function () {
+          if ($scope.newUser.name && $scope.newUser.type) {
+            $scope.users.push({
+              name: $scope.newUser.name,
+              type: $scope.newUser.type,
+              date: new Date().toLocaleDateString('pt-BR')
+            });
+            $scope.newUser = {};
+          }
+        };
+
+        $scope.removeUser = function(index) {
+          $scope.users.splice(index, 1);
+        };
+      });
+  </script>
+
 </body>
 </html>
